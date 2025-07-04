@@ -8,16 +8,16 @@ import org.springframework.grpc.client.ImportGrpcClients
 
 
 @Configuration(proxyBeanMethods = false)
-//@ImportGrpcClients(
-//    target = "helloworld",
-//    basePackages = ["io.grpc.examples"]
-//)
 @ImportGrpcClients(
     target = "helloworld",
-//    basePackages = ["io.grpc.examples"],
-    types = [GreeterGrpcKt.GreeterCoroutineStub::class],
-    factory = CoroutineStubFactory::class
+    basePackages = ["io.grpc.examples"]
 )
+//@ImportGrpcClients(
+//    target = "helloworld",
+////    basePackages = ["io.grpc.examples"],
+//    types = [GreeterGrpcKt.GreeterCoroutineStub::class],
+//    factory = CoroutineStubFactory::class
+//)
 class GrpcClientConfiguration {
 
     /**

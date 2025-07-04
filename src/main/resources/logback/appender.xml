@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<included>
+    <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
+    
+    <springProperty name="APP_NAME" source="spring.application.name"/>
+
+    <property name="MY_CONSOLE_LOG_PATTERN" value="${MY_CONSOLE_LOG_PATTERN:-%clr([%d{yyyy-MM-dd HH:mm:ss.SSS}]){faint} %clr(%5p [${APP_NAME:-anon-service},%X{traceId:-},%X{spanId:-}]) %clr(${PID:- }){magenta} %clr(---){faint} %clr([%t]){faint} %clr(%-40.40logger{39}){cyan} %clr(:){faint} %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}}"/>
+
+
+    <!-- 标准输出 -->
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>${MY_CONSOLE_LOG_PATTERN}</pattern>
+            <charset>utf8</charset>
+        </encoder>
+    </appender>
+
+</included>

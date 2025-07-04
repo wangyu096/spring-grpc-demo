@@ -25,6 +25,12 @@ repositories {
     }
 }
 
+dependencyManagement {
+    imports {
+        mavenBom("org.springframework.grpc:spring-grpc-dependencies:0.9.0-SNAPSHOT")
+    }
+}
+
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter")
     implementation("org.springframework.boot:spring-boot-starter-web")
@@ -38,6 +44,9 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.8.0")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactor:1.8.0")
     implementation("org.springframework.grpc:spring-grpc-client-spring-boot-starter:0.9.0-SNAPSHOT")
+    implementation("org.springframework.grpc:spring-grpc-server-spring-boot-starter:0.9.0-SNAPSHOT")
+    implementation("org.springframework.boot:spring-boot-starter-actuator")
+    implementation("io.micrometer:micrometer-tracing-bridge-otel")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit5")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
