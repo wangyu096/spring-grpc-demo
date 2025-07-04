@@ -7,7 +7,7 @@ import io.grpc.stub.StreamObserver
 import org.slf4j.LoggerFactory
 import org.springframework.stereotype.Service
 
-@Service
+//@Service
 class GreeterBlockingGrpcServer: GreeterGrpc.GreeterImplBase() {
 
     override fun sayHello(request: HelloRequest?, responseObserver: StreamObserver<HelloReply>?) {
